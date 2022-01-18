@@ -140,23 +140,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gestao_vendas',
-        'USER': 'postgres',
-        'PASSWORD': 'cananeia1',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
-https://gestor-de-vendas.herokuapp.com/  
-https://git.heroku.com/gestor-de-vendas.git
-"""
