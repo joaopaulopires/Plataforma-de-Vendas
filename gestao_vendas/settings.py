@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gestor-de-vendas', '127.0.0.1']
 
 
 # Application definition
@@ -157,4 +157,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+https://gestor-de-vendas.herokuapp.com/  
+https://git.heroku.com/gestor-de-vendas.git
 """

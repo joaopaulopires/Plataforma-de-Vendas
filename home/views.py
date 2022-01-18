@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
+
+#https://docs.djangoproject.com/en/4.0/topics/auth/default/
+
 def home(request):
     return render(request, 'home.html')
 
