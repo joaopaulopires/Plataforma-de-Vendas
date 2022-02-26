@@ -1,31 +1,64 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Lista de Clientes</h1>
+{% extends 'base.html' %}
+{% load bootstrap %}
 
-    <ul>
-        {% for person in persons %}
-            <li>
-                <a href="{% url 'atualizar_cliente' person.id %}">
-                {{ person.first_name }}
+{% block title %}Lista de clientes {% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-2 bg">
+
+    </div>
+    <div class="col-6 bg">
+        <h1>Lista de Clientes</h1>
+
+            <ul class="list-group">
+                {% for person in persons %}
+                    <li class="list-group-item">
+                        <a href="{% url 'atualizar_cliente' person.id %}">
+                            {{ person.first_name }} {{ person.dt_nasc }}
+                        </a>
+                        <a href="{% url 'deletar_cliente' person.id %}" class="trash-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                        </a>
+
+                    </li>
+                    <br>
+                {% endfor %}
+                <br>
+                </br>
+                <a href="{% url 'novo_cliente' %}"  class="btn btn-success" id="button-newclient">Novo cliente</a>
+            </ul>
+    </div>
+    <div class="col-2 bg">
+        {% if user.is_authenticated %}
+            <p>Olá {{ user.username }}
+                <a href="{% url 'logout' %}">
+                    <span class="badge bg-dark">Sair </span>
                 </a>
-                <a href="{% url 'deletar_cliente' person.id %}">Excluir</a>
-            </li>
-        {% endfor %}
+            </p>
+        {% endif %}
+    </div>
+    <div class="col bg1">
 
-        <a href="{% url 'novo_cliente' %}">Novo cliente</a>
-    </ul>
+    </div>
+</div>
+{% endblock %}
 
-    <a href="{% url 'logout' %}">Sair</a>
-
-
-
-</body>
-</html>
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 bg">
+                    <p>Plataforma de Vendas</p>
+                </div>
+                <div class="col-6 bg">
+                    <a href="https://comunicaria.com/" target="_blank" class="link-footer">
+                        Comunicaria.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

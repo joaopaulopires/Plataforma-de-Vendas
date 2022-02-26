@@ -12,7 +12,7 @@ def lista_clientes(request):
 
 @login_required
 def novo_cliente(request):
-    form = PersonForm(request.POST, request.FILES, None)
+    form = PersonForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
         return redirect('lista_clientes')
@@ -28,6 +28,7 @@ def atualizar_cliente(request, id):
         return redirect('lista_clientes')
     return render(request, 'person_form.html', {'form': form})
 
+# TODO: Refatorar
 @login_required
 def deletar_cliente(request, id):
     person = get_object_or_404(Person, pk=id)

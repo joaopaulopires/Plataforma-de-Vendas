@@ -1,23 +1,94 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Plataforma de Vendas</h1>
+{% extends 'base.html' %}
 
-    {% if user.is_authenticated %}
-        <p>Olá
-            <a href="{% url 'lista_clientes' %}"> {{ user.username }} </a>
-        </p>
-        <a href="{% url 'logout' %}">Sair</a>
-    {% else %}
-        <a href="{% url 'login' %}">Entrar</a>
-    {% endif %}
+{% block title %} Plataforma de Vendas {% endblock %}
 
-</body>
-</html>
+{% block main %}
+<div class="row">
+    <div class="col-6">
+        <h1>Plataforma de Vendas</h1>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+     <div class="col">
+         {% if user.is_authenticated %}
+                <p>Olá
+                    <a href="{% url 'lista_clientes' %}" class="btn btn-outline-success"> {{ user.username }} </a>
+                </p>
+                <a href="{% url 'logout' %}">
+                    <span class="badge bg-dark">Sair </span>
+                </a>
+         {% else %}
+                <a href="{% url 'login' %}" class="btn btn-outline-success">Entrar</a>
+         {% endif %}
+    </div>
+    <div class="col">
+
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-6 bg">
+
+        </div>
+        <div class="col-2 bg">
+
+        </div>
+        <div class="col bg">
+
+        </div>
+        <div class="col bg">
+
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-6 bg">
+
+        </div>
+        <div class="col-2 bg">
+
+        </div>
+        <div class="col-1 bg">
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-sm-12 bg">
+
+        </div>
+        <div class="col-lg-4 col-sm-12 bg">
+
+        </div>
+        <div class="col-lg-4 col-sm-12 bg">
+
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 bg">
+                    <p>Plataforma de Vendas</p>
+                </div>
+                <div class="col-6 bg">
+                    <a href="https://comunicaria.com/" target="_blank" class="link-footer">
+                        Comunicaria.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+
