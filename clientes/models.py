@@ -12,7 +12,7 @@ class Person(models.Model):
     dt_cadastro = models.DateField(default=timezone.now)
     first_name = models.CharField(verbose_name="Nome", max_length=100)
     last_name = models.CharField(verbose_name="Sobrenome", max_length=100)
-    age = models.IntegerField(verbose_name="Idade")
+    age = models.IntegerField(verbose_name="Idade", null=True, blank=True)
     dt_nasc = models.DateField(verbose_name="Data de Nascimento", default=timezone.now)
     salary = models.DecimalField(verbose_name="Renda", max_digits=7, decimal_places=2, null=True, blank=True)
     bio = models.TextField(verbose_name="Sobre")
