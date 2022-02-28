@@ -9,7 +9,6 @@ class Documento(models.Model):
         return self.num_doc
 
 class Person(models.Model):
-    dt_cadastro = models.DateField(default=timezone.now)
     first_name = models.CharField(verbose_name="Nome", max_length=100)
     last_name = models.CharField(verbose_name="Sobrenome", max_length=100)
     age = models.IntegerField(verbose_name="Idade", null=True, blank=True)
