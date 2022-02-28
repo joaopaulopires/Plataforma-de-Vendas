@@ -3,8 +3,10 @@ backports.zoneinfo
 dj-database-url
 dj-static
 Django<=4.0
+django-bootstrap-form
 Pillow
 python-decouple
 sqlparse
 static3
 tzdata
+
