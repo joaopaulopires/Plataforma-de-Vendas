@@ -23,8 +23,8 @@ class Person(models.Model):
         return self.first_name + ' ' + self.last_name
 
 class Produto(models.Model):
-    descricao = models.CharField(max_length=100)
-    preco = models.DecimalField(max_digits=7, decimal_places=2)
+    descricao = models.CharField(verbose_name="Descrição", max_length=200)
+    preco = models.DecimalField(verbose_name="Preço", max_digits=8, decimal_places=2)
 
     def __str__(self):
         return self.descricao
