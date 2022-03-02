@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <br>
+    {% for produto in object_list %}
+    <a href="{% url 'produto_detalhado' produto.id %}">
+        <p>Nome: {{ produto.name }} | quantidade : {{ produto.quant }}</p>
+    </a>
+    {% endfor %}
+    <br>
+    <a href="{% url 'novo_produto' %}">Novo</a>
+</body>
+</html>
