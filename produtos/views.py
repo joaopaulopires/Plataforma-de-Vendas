@@ -32,4 +32,12 @@ class deletar_produto(DeleteView):
     def get_success_url(self):
         return reverse_lazy('lista_produtos')
 
+# Documentação Class Based View
+# https://docs.djangoproject.com/en/4.0/topics/class-based-views/
+# https://docs.djangoproject.com/en/4.0/ref/class-based-views/
+# https://docs.djangoproject.com/en/4.0/topics/class-based-views/generic-display/
+# https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-editing/
+# https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/
+#
 # Create your views here.
+
